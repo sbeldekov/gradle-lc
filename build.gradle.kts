@@ -1,7 +1,11 @@
 import com.example.gradle.plugin.hello.HelloPluginExtension
 import com.example.gradle.plugin.hello.HelloTask
 
-allprojects {
+plugins {
+    id("com.example.gradle.plugin.hello") apply false
+}
+
+subprojects {
     afterEvaluate {
         apply(plugin = "com.example.gradle.plugin.hello")
 
